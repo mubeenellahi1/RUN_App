@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -13,12 +13,12 @@ import java.util.Date;
 
 @Entity(tableName = "MatchStat",
         foreignKeys ={
-                @ForeignKey(entity = com.example.it.run.Match.class,
+                @ForeignKey(entity = com.example.it.run.Entity.Match.class,
                         parentColumns = "id",
-                        childColumns = "venueID"),
-                @ForeignKey(entity = com.example.it.run.Player.class,
+                        childColumns = "matchID"),
+                @ForeignKey(entity = com.example.it.run.Entity.Player.class,
                         parentColumns = "id",
-                        childColumns = {"team1ID","team2ID"})
+                        childColumns = {"playerID"})
         }
 )
 public class MatchStat {

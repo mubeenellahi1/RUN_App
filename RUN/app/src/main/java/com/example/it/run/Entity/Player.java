@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 /**
  * Created by IT on 10/15/2018.
@@ -22,7 +22,6 @@ public class Player{
     @ColumnInfo(name = "firstName")
     private String firstName;
 
-    @NonNull
     @ColumnInfo(name = "lastName")
     private String lastName;
 
@@ -36,13 +35,13 @@ public class Player{
     private char gender;
 
 
-    public Player(String fistName,String lastName,int age,Date birthday,char gender,int id) {
-        this.firstName = fistName;
+    public Player(Integer id, String firstName,String lastName, int age, Date birthday, char gender) {
+        this.id = id;
+        this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.birthday = birthday;
         this.gender = gender;
-        this.id=id;
     }
 
     public Integer getId() {

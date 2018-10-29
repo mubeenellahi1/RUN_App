@@ -3,6 +3,7 @@ package com.example.it.run.Database;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
 import com.example.it.run.DAO.MatchDAO;
@@ -11,13 +12,14 @@ import com.example.it.run.DAO.NewsFeedDAO;
 import com.example.it.run.DAO.PlayerDAO;
 import com.example.it.run.DAO.TeamDAO;
 import com.example.it.run.DAO.TournamentDAO;
-import com.example.it.run.Match;
-import com.example.it.run.MatchStat;
-import com.example.it.run.NewsFeed;
-import com.example.it.run.Player;
-import com.example.it.run.Team;
-import com.example.it.run.Tournament;
-import com.example.it.run.Venue;
+import com.example.it.run.Entity.Converters;
+import com.example.it.run.Entity.Match;
+import com.example.it.run.Entity.MatchStat;
+import com.example.it.run.Entity.NewsFeed;
+import com.example.it.run.Entity.Player;
+import com.example.it.run.Entity.Team;
+import com.example.it.run.Entity.Tournament;
+import com.example.it.run.Entity.Venue;
 
 
 import com.example.it.run.DAO.VenueDAO;
@@ -26,7 +28,8 @@ import com.example.it.run.DAO.VenueDAO;
  * Created by IT on 10/17/2018.
  */
 
-@Database(entities = {Player.class, Tournament.class, Venue.class, Match.class, MatchStat.class, NewsFeed.class, Team.class}, version = 1, exportSchema = false)
+@Database   (entities = {Player.class, Tournament.class, Venue.class, Match.class, MatchStat.class, NewsFeed.class, Team.class}, version = 1, exportSchema = false)
+@TypeConverters({Converters.class})
 public abstract class AppDataBase extends RoomDatabase {
 
     private static AppDataBase instance;

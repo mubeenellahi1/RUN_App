@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -12,12 +12,16 @@ import android.support.annotation.NonNull;
 
 @Entity(tableName = "Match",
         foreignKeys ={
-            @ForeignKey(entity = com.example.it.run.Venue.class,
-            parentColumns = "id",
-            childColumns = "venueID"),
-            @ForeignKey(entity = com.example.it.run.Team.class,
-            parentColumns = "id",
-            childColumns = {"team1ID","team2ID"})
+            @ForeignKey(entity = com.example.it.run.Entity.Venue.class,
+            parentColumns = {"id"},
+            childColumns = {"venueID"}),
+            @ForeignKey(entity = com.example.it.run.Entity.Team.class,
+            parentColumns = {"id"},
+            childColumns = {"team1ID"}),
+            @ForeignKey(entity = com.example.it.run.Entity.Team.class,
+            parentColumns = {"id"},
+            childColumns = {"team2ID"})
+
         }
 )
 public class Match {

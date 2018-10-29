@@ -1,7 +1,8 @@
-package com.example.it.run;
-
+package com.example.it.run.Entity;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
@@ -12,21 +13,23 @@ import java.util.Date;
  * Created by IT on 10/15/2018.
  */
 
-@Entity(tableName = "Team")
+@Entity (tableName = "Team")
+
 public class Team {
 
     @PrimaryKey
     @ColumnInfo(name = "id")
     private Integer id;
 
-    @ColumnInfo(name = "word")
+    @ColumnInfo(name = "teamName")
     private String teamName;
 
-    @ColumnInfo(name = "word")
+    @Ignore
+    @ColumnInfo(name = "logo")
     private Bitmap logo;
 
 
-    public Team(Integer id, String teamName,Bitmap logo) {
+    public Team(Integer id, String teamName) {
         this.id = id;
         this.teamName = teamName;
         this.logo = logo;

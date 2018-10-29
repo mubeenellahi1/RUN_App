@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -11,7 +11,7 @@ import java.util.Date;
  * Created by IT on 10/15/2018.
  */
 
-@Entity(tableName = "Player")
+@Entity(tableName = "Venue")
 public class Venue {
 
     @PrimaryKey
@@ -31,9 +31,9 @@ public class Venue {
     private String contact;
 
 
-    public Venue(String name,String logitude,String latitude,String contact,int id) {
+    public Venue(String name,String longitude,String latitude,String contact,int id) {
         this.name = name;
-        this.longitude= logitude;
+        this.longitude= longitude;
         this.latitude = latitude;
         this.contact = contact;
         this.id=id;

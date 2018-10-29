@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 import android.arch.persistence.room.TypeConverter;
 

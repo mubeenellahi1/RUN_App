@@ -1,4 +1,4 @@
-package com.example.it.run;
+package com.example.it.run.Entity;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
@@ -11,7 +11,7 @@ import java.util.Date;
  * Created by IT on 10/15/2018.
  */
 
-@Entity(foreignKeys = @ForeignKey(entity = com.example.it.run.Venue.class,
+@Entity(foreignKeys = @ForeignKey(entity = com.example.it.run.Entity.Venue.class,
         parentColumns = "id",
         childColumns = "venueID"))
 public class Tournament {
